@@ -4,7 +4,7 @@ with open('README.md') as f:
     long_description = f.read()
 
 setup(name='cloudgenix_tenant_acl',
-      version='1.0.0b1',
+      version='1.0.0b2',
       description='Scripts to Download, Upload, and Optimize a CloudGenix Tenant Access List.',
       long_description=long_description,
       long_description_content_type='text/markdown',

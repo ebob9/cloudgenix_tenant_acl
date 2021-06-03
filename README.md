@@ -19,3 +19,9 @@ optimize_acl[.py]: Optimize a tenant ACL list with a lossy superneting function.
 ```text
 usage: optimize_acl.py [-h] --input INPUT --output OUTPUT [--match-quality MATCH_QUALITY] [--ip-mismatch-limit IP_MISMATCH_LIMIT]
 ```
+
+#### Version
+| Version | Build | Changes |
+| ------- | ----- | ------- |
+| **1.0.0** | **b2** | Bugfix of ipv4 list rendering |
+|           | **b1** | Initial Release. |

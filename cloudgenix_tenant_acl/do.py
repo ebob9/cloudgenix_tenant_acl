@@ -235,7 +235,9 @@ def go():
     with open(input_filename, "r") as config_json:
         input_json = json.load(config_json)
 
+    # is there a list object at the root of the input file?
     if not isinstance(input_json, list):
+        # ok, if not list - is it in DICT format?
         if isinstance(input_json, dict):
             # check for optimized ACL
             optimized_ipv4_list = input_json.get("optimized_ipv4_list")
@@ -254,8 +256,10 @@ def go():
         if isinstance(entry, dict):
             ipv4 = entry.get('ipv4')
             if ipv4 and isinstance(ipv4, text_type):
-                # got ipv4 candidate. add
-                sanitized_ipv4_list.append(ipv4)
+                # got ipv4 candidate. add in correct ipv4 list format.
+                sanitized_ipv4_list.append({
+                    "ipv4": ipv4
+                })
             else:
                 print("WARNING: read ipv4 invalid format: type: {0} value: '{1}'. Skipping.."
                       "".format(type(ipv4), ipv4))
